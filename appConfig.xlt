@@ -1,0 +1,24 @@
+{
+	"appName": "TIS 20",
+	"appPackageName": "com.burgerw",
+	"appVersionName": "TIS-V20.0.0520zxGCNEche",
+	"appVersionCode": 100060,
+	"data": {		
+		"启用顶栏": false,
+		"顶栏标题": "TIS 20",
+		"顶栏颜色": "#3F51B5",
+		"横屏": false,
+		"显示状态栏": true,
+		"启用进度条": true,
+		"进度条颜色": "#00000000",
+		"支持打开外部应用": true,
+		"提示打开外部应用": true,
+		"启动页面": "index.html"
+	},
+	"indexPages": [
+		
+	],
+	"extraHeaders": {
+		
+	}
+}

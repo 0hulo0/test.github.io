@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>    
+   <meta charset="UTF-8">   
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <title>Document</title> 
+                <!--          如何使用 Date() 方法获得当日的日期。        getFullYear()         使用 getFullYear() 获取年份。          getTime()         getTime() 返回从 1970 年 1 月 1 日至今的毫秒数。          setFullYear()         如何使用 setFullYear() 设置具体的日期。          toUTCString()         如何使用 toUTCString() 将当日的日期（根据 UTC）转换为字符串。          getDay()         如何使用 getDay() 和数组来显示星期，而不仅仅是数字。          Display a clock         如何在网页上显示一个钟表。      -->      
+                <style>          
+                .nav{              
+                  display: inline-block;             
+                   width: 10%;              
+                   height: 10px;              
+                   background-color: aqua;              
+                   color: brown;             
+                    font-size: 40px;           
+                       font-weight: 70;          
+                           line-height: 90px;             
+                            text-align: center;          }     
+                           </style>
+                            </head>
+                             <body onload="startTime()">     
+                             <script>         
+                             d=new Date();         
+                             d.setFullYear(1982,03,28);         
+                             var week=new Array(7);        
+                              week[0]="周一";         
+                              week[1]="周二";        
+                               week[2]="周三";         
+                               week[3]="周四";        
+                                week[4]="周五";         
+                             week[5]="周六";        
+                             week[6]="周天";         
+                             function data(){            
+                            // 获取年份           
+                              document.getElementById("demo").innerHTML=d.getFullYear();            
+                           // 获取从1970年1月1日至今的毫秒数           
+                             document.getElementById("demo1").innerHTML=d.getTime();             
+                            // 将当日的日期转换成字符串             
+                             document.getElementById("demo2").innerHTML=d.toUTCString();           
+                            // 获取当前周几            
+                             document.getElementById("demo3").innerHTML=week[d.getDay()-1];            
+                              // 获取具体时间           
+                                document.getElementById("demo4").innerHTML=d;             
+                                x=document.getElementById("demo5");          }       
+                                function startTime(){            
+                                     var today=new Date();            
+                                      var h=today.getHours();         
+                                          var m=today.getMinutes();     
+                                                  var s=today.getSeconds();        
+                                                       // 在小于10的数字前加一个‘0’         
+                                                           m=checkTime(m);          
+                                                              s=checkTime(s);            
+                                                               document.getElementById('demo5').innerHTML=h+":"+m+":"+s;           
+                                                                 //开启一个多线程,开启后本线程会继续执行。           
+                                                                   t=setTimeout(function(){startTime()},500);          
+                                                                        console.log("hello")           
+                                                                          console.log(s)             
+                                                                          return            
+                                                                           }         
+                                                                        function checkTime(i){             
+                                                                            if (i<10){                 
+                                                                              i="0" + i;             }            
+                                                                             return i;         }     
+                                                                           </script>      
+                                                                           <div class="nav" id="demo5"></div><br>         
+                                                                           <div id="demo"></div>   
+                                                                             <div id="demo1"></div>  
+                                                                                <div id="demo2"></div> 
+                                                                                    <div id="demo3"></div>  
+                                                                                       <div id="demo4"></div>   
+                                                                                            
+                </body>
+                 </html>
